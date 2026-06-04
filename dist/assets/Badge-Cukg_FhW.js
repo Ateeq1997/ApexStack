@@ -1,0 +1,1 @@
+import{j as s,e as r}from"./index-mQWxaBJM.js";const a={neutral:"bg-slate-500/10 text-slate-500",success:"bg-emerald-500/15 text-emerald-500",warning:"bg-amber-500/15 text-amber-500",danger:"bg-rose-500/15 text-rose-500"};function l({value:e,tone:t="neutral"}){return s.jsx("span",{className:r("rounded-full px-2.5 py-1 text-xs font-semibold",a[t]),children:e})}export{l as B};

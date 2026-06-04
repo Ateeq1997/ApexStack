@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 236 40% 97%;
+  --surface: 0 0% 100%;
+  --surface-elevated: 0 0% 100%;
+  --text: 222 30% 12%;
+  --muted: 220 20% 24%;
+  --accent: 203 88% 45%;
+  --accent-soft: 203 80% 94%;
+  --border: 220 18% 88%;
+}
+
+.dark {
+  --bg: 226 32% 9%;
+  --surface: 226 26% 13%;
+  --surface-elevated: 225 24% 17%;
+  --text: 210 40% 96%;
+  --muted: 216 18% 72%;
+  --accent: 194 84% 56%;
+  --accent-soft: 203 40% 20%;
+  --border: 224 18% 24%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at 20% 20%, hsla(var(--accent), 0.12), transparent 40%),
+    radial-gradient(circle at 80% 10%, hsla(var(--accent), 0.08), transparent 35%),
+    hsl(var(--bg));
+  color: hsl(var(--text));
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: hsl(var(--text));
+  }
+
+  input,
+  select,
+  textarea {
+    background-color: hsl(var(--surface));
+    color: hsl(var(--text));
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: hsl(var(--muted));
+  }
+
+  select option {
+    background-color: hsl(var(--surface));
+    color: hsl(var(--text));
+  }
+}
+
+@layer utilities {
+  .card {
+    @apply rounded-2xl border bg-[hsl(var(--surface))] text-[hsl(var(--text))] shadow-card;
+  }
+
+  .soft-border {
+    @apply border border-[hsl(var(--border))];
+  }
+
+  .text-muted {
+    color: hsl(var(--muted));
+  }
+
+  .text-accent {
+    color: hsl(var(--accent));
+  }
+
+  .bg-elevated {
+    background-color: hsl(var(--surface-elevated));
+  }
+}
